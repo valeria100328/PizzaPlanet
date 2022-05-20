@@ -1,38 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { PizzaRegisterComponent } from './components/pizza-register/pizza-register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PizzaListComponent } from './components/pizza-list/pizza-list.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 
 const routes: Routes = [
+    { path: '', component: HomeComponent },
+    { path: 'login', component: LoginComponent },
+    { path: '', component: HomeComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'navbar', component: NavbarComponent },
     { path: '', component: DashboardComponent },
     { path: '404', component: Pagina404Component },
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'pizzalist', component: PizzaListComponent},
+    { path: 'pizzalist', component: PizzaListComponent },
     { path: 'register', component: PizzaRegisterComponent },
-    { path: '**', redirectTo: '404', pathMatch: 'full' }
-
-=======
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component'; 
-import { NavbarComponent } from './components/navbar/navbar.component';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'navbar',
-    component: NavbarComponent,
-  },
->>>>>>> developer
+    { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 
 @NgModule({

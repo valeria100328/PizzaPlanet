@@ -1,60 +1,63 @@
-.loginform {
-  max-width: 500px;
-  margin: auto;
-}
-
-.loginPage {
+.login {
   background-image: url(../../../assets/img/backgroundlogin.gif);
-  height: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-h2 {
-  color: white;
-  font-weight: bold;
-  font-family: cursive;
-}
-.input-container {
-  border: 1px solid #9a0680;
-  display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  margin-bottom: 15px;
+  align-items: center;
+  justify-content: center;
+  height: 110vh;
 }
 
-.icon {
-  padding: 10px;
-  background: #9a0680;
-  color: white;
-  min-width: 50px;
+.login-page {
+  border-radius: 50px;
+  /* background: linear-gradient(145deg, #7a224e, #90295d); */
+  background-image: linear-gradient(180deg, #010038 12%, #45046a 50%, #872657 100%);
+  box-shadow: 10px 10px 40px #73204a, -5px -5px 40px #9b2c64;
+  height: 680px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titule {
+  font-family: "League Gothic", sans-serif;
+  color: #ffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+label {
+  font-family: "League Gothic", sans-serif;
+  color: #ffff;
   text-align: center;
 }
 
-.input-field {
-  width: 100%;
-  padding: 10px;
-  outline: none;
-}
-
-.input-field:focus {
-  border: 2px solid #9a0680;
-}
-
-.btn {
-  background-color: #9a0680;
-  color: white;
-  padding: 15px 20px;
+.login-buton {
+  padding-top: 20px;
+  padding: 8px 36px;
+  border-radius: 40px;
   border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  font-family: cursive;
-  font-weight: bold;
-  font-size: 100%;
+  background-color: #45046a;
+  font-family: "League Gothic", sans-serif;
+  color: #ffff;
+  margin-left: 12%;
+  margin-right: 10%;
 }
 
-.btn:hover {
-  opacity: 1;
+.login-buton:hover {
+  background-color: #010038;
+}
+
+
+.iconsSocialNetworks i {
+  color: #ffff;
+  padding-left: 35px;
+  margin-top: 20px;
+  border: none;
+
+}
+
+.iconsSocialNetworks i {
+  color: #ffff;
+  margin-bottom: 45px;
 }
