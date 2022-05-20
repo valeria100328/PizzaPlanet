@@ -1,0 +1,60 @@
+.loginform {
+  max-width: 500px;
+  margin: auto;
+}
+
+.loginPage {
+  background-image: url(../../../assets/img/backgroundlogin.gif);
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+h2 {
+  color: white;
+  font-weight: bold;
+  font-family: cursive;
+}
+.input-container {
+  border: 1px solid #9a0680;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: #9a0680;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid #9a0680;
+}
+
+.btn {
+  background-color: #9a0680;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.btn:hover {
+  opacity: 1;
+}

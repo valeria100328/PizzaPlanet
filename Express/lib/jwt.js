@@ -11,7 +11,7 @@ const generateJwt = (data) => {
                 roleId: data.roleId,
                 iat: moment().unix(),
             },
-            process.env.SK_JWT
+            process.env.JWT
         );
     } catch (e) {
         return jwToken;
@@ -19,7 +19,7 @@ const generateJwt = (data) => {
 };
 
 const verifyToken = (token) => {
-    const verify = jwt.verify(token, process.env.SK_JWT);
+    const verify = jwt.verify(token, process.env.JWT);
 };
 
 export default { generateJwt, verifyToken };

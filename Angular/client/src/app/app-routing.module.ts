@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+<<<<<<< HEAD
 import { PizzaRegisterComponent } from './components/pizza-register/pizza-register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PizzaListComponent } from './components/pizza-list/pizza-list.component';
@@ -13,6 +14,25 @@ const routes: Routes = [
     { path: 'register', component: PizzaRegisterComponent },
     { path: '**', redirectTo: '404', pathMatch: 'full' }
 
+=======
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component'; 
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'navbar',
+    component: NavbarComponent,
+  },
+>>>>>>> developer
 ];
 
 @NgModule({
