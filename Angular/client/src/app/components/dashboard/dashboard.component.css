@@ -1,0 +1,77 @@
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #ff5f00;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.pizza {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+li {
+    list-style: none;
+    transform: translateX(-21px);
+    text-align: center;
+    transform: all 0.7s;
+    cursor: pointer;
+}
+
+button,
+h2,
+i {
+    color: #fff;
+}
+
+button:hover {
+    background-color: #911f27;
+    color: #fff;
+}
+
+.social-icons {
+    text-align: center;
+}
+.social-icons a {
+    margin-right: 15px;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar li .social-icons a {
+        float: left;
+    }
+    div.content {
+        margin-left: 0;
+    }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .sidebar .social-icons {
+        text-align: center;
+        float: none;
+    }
+}
+
+.container {
+    margin-left: 20%;
+}

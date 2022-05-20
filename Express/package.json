@@ -1,0 +1,24 @@
+{
+    "name": "pizzaplanet",
+    "version": "1.0.0",
+    "description": "register pizzas crud",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon ."
+    },
+    "keywords": [
+        "pizza",
+        "crud",
+        "angular"
+    ],
+    "author": "valery, jonnathan",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.16"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "mongoose": "^6.3.4"
+    }
+}

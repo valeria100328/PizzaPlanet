@@ -1,1 +1,50 @@
-<p>dashboard works!</p>
+<div class="">
+    <div class="sidebar">
+        <h2>MENU</h2>
+        <br />
+        <div class="pizza">
+            <i
+                routerLink=""
+                class="fa-solid fa-pizza-slice fa-5x fa-flip"
+                style="--fa-animation-duration: 2s"
+            ></i>
+        </div>
+        <ul class="list-items">
+            <li routerLink="">
+                <button class="btn fw-dark">
+                    <i class="fa-solid fa-house-chimney-user fa-2x"></i>Home
+                </button>
+            </li>
+            <li routerLink="/pizzalist">
+                <button class="btn fw-dark">
+                    <i class="fa-solid fa-clipboard-list fa-2x"></i> My Orders
+                </button>
+            </li>
+            <li routerLink="/">
+                <button class="btn fw-dark">
+                    <i class="fa-solid fa-address-card fa-2x"></i> My Profile
+                </button>
+            </li>
+            <br />
+            <br />
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"
+                    ><i class="fab fa-facebook-f fa-2x"></i
+                ></a>
+                <a href="https://twitter.com/?lang=es" target="_blanck"
+                    ><i class="fab fa-twitter fa-2x"></i
+                ></a>
+                <a href="https://github.com/jonathangil97" target="_blanck"
+                    ><i class="fab fa-github fa-2x"></i
+                ></a>
+                <a href="https://www.youtube.com/" target="_blanck"
+                    ><i class="fab fa-youtube fa-2x"></i
+                ></a>
+            </div>
+        </ul>
+    </div>
+    <div class="container">
+        <app-pizza-list></app-pizza-list>
+    </div>
+</div>
+
