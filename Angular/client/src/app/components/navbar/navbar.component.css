@@ -1,0 +1,98 @@
+.navbar img{
+
+    width:500%;
+
+}
+.bit-navbar {
+    background: #FF5F00;
+    box-shadow: 4px 6px 12px #00000066;
+  }
+  .nav-item .active {
+    border-radius: 6px;
+    background: linear-gradient(145deg, #f4fdff, #ecdac4);
+    box-shadow: 4px 4px 8px  #FF5F00, -4px -4px 8px #f7e5cc;
+  }
+  
+  .bit-navbar .dropdown-menu a:hover {
+    color: #454545;
+  }
+  .bit-navbar .nav-item {
+    margin: auto 4px;
+  }
+  .bit-navbar a {
+      
+    padding-left: 12px;
+    padding-right: 12px;
+    font-weight: bold;
+  }
+  .bit-navbar .dropdown-menu {
+    background: #545454;
+  }
+  a .navbar-brand {
+    color: #454545;
+  }
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  .bit-title-second-nav {
+    font-weight: 500;
+    margin-top: 3%;
+    font-size: 115%;
+    color: #ffffff;
+  }
+  .bit-title-second-nav :hover {
+    color: #7d0f90;
+  }
+  .bit-login-style {
+    position: relative;
+    margin: auto;
+    padding: 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    color: #ffffff;
+  }
+  .bit-login-style:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    margin-top: 10px;
+    background: #7d0f90;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+  }
+  .bit-login-style span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .bit-login-style svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #7d0f90;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+  .bit-login-style:hover:before {
+    margin-right: 5%;
+    padding: 18px;
+    width: 88%;
+    background: #9880ee;
+  }
+  .bit-login-style:hover svg {
+    transform: translateX(0);
+  }
+  .bit-login-style:active {
+    transform: scale(0.95);
+  }
+  

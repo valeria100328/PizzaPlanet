@@ -7,6 +7,11 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +19,19 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
     HomeComponent,
     LoginComponent,
     DashboardComponent,
-    Pagina404Component
+    Pagina404Component,
+    NavbarComponent,
+    
+   
+    
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
