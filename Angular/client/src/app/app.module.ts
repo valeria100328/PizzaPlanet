@@ -13,45 +13,30 @@ import { PizzaRegisterComponent } from './components/pizza-register/pizza-regist
 import { PizzaListComponent } from './components/pizza-list/pizza-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-
-
-
-
-
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent,
-    DashboardComponent,
-    Pagina404Component,
-    NavbarComponent,
-    PizzaRegisterComponent ,
-    PizzaListComponent,
-    
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        LoginComponent,
+        DashboardComponent,
+        Pagina404Component,
+        NavbarComponent,
+        PizzaRegisterComponent,
+        PizzaListComponent,
+    ],
 
-    
-  
-    
-  ],
-
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule 
-
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

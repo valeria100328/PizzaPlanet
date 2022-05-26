@@ -11,15 +11,12 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-    { path: '', component: HomeComponent },
-    { path: 'login', component: LoginComponent },
     { path: 'navbar', component: NavbarComponent },
-    { path: '', component: DashboardComponent },
     { path: '404', component: Pagina404Component },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'pizzalist', component: PizzaListComponent },
     { path: 'register', component: PizzaRegisterComponent },
-    { path: '**', redirectTo: '404', pathMatch: 'full' },
+    { path: '**', redirectTo: 'register', pathMatch: 'full' },
 ];
 
 @NgModule({

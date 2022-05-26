@@ -2,44 +2,36 @@
     <h1>MY ORDERS</h1>
 </div>
 
-<br />
+<br/>
 <button routerLink="/register" class="btn btn-primary">REGISTER</button> <br />
-<br />
-<table class="table">
+<br/>
+<table class="table " *ngIf="listaPizzas.length > 0">
     <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col"></th>
             <th scope="col">PIZZA NAME</th>
             <th scope="col">SIZE</th>
             <th scope="col">ADITION</th>
             <th scope="col">PRICE</th>
-            <th scope="col">ACTIONS</th>
+            <th colspan="2">ACTIONS</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>@twitter</td>
-            <td></td>
+        <tr *ngFor="let pizza_data of listaPizzas">
+            <th scope="row"> <i
+                routerLink=""
+                class="fa-solid fa-pizza-slice fa-2x fa-flip"
+                style="--fa-animation-duration: 2s"
+            ></i></th>
+            <td>{{pizza_data.name}}</td>
+            <td>{{pizza_data.size}}</td>
+            <td>{{pizza_data.adition}}</td>
+            <td>{{pizza_data.price}}</td>
+            <td>
+                <i class="pen fa-solid fa-pen-to-square fa-2x icon-update px-2" [routerLink]="['/register', pizza_data._id]"></i>
+
+                <i class="trash fa-solid fa-trash-can fa-2x icon-delete px-2" (click)="eliminarPizza(pizza_data._id)"></i> </td>
         </tr>
     </tbody>
+
 </table>

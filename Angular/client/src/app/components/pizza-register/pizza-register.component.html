@@ -3,31 +3,36 @@
         <h1>FORM REGISTER</h1>
     </div>
     <div class="container">
-        <form>
+        <form [formGroup]="pizzaForm" (ngSubmit)="addPizza()">
             <strong>
                 <label for="name">PIZZA NAME</label>
                 <input
                     type="text"
-                    id="fname"
+                    formControlName="name"
                     name="firstname"
+                    class="form-control"
                     placeholder="Jupiter Pizza..."
-                />
+                /><p class="fw-bold text-danger" *ngIf="pizzaForm.get('name')?.hasError('required')&& pizzaForm.get('name')?.touched">The pizza name is needed</p>
             </strong>
             <strong>
-                <label for="size">SIZE</label>
-                <select name="size">
-                    <option value="small">SMALL</option>
-                    <option value="medium">MEDIUM</option>
-                    <option value="big">BIG</option>
-                </select>
+                <label for="name">SIZE</label>
+                <input
+                    type="text"
+                    formControlName="size"
+                    name="firstname"
+                    class="form-control"
+                    placeholder="Medium"
+                /><p class="fw-bold text-danger" *ngIf="pizzaForm.get('size')?.hasError('required')&& pizzaForm.get('size')?.touched">The pizza size is needed</p>
             </strong>
             <strong>
-                <label for="adition">ADITION</label>
-                <select id="adition" name="adition">
-                    <option value="peperoni">PEPERONI</option>
-                    <option value="jam">JAM</option>
-                    <option value="">MEAT</option>
-                </select>
+                <label for="name">ADITION</label>
+                <input
+                    type="text"
+                    formControlName="adition"
+                    name="firstname"
+                    class="form-control"
+                    placeholder="Peperoni"
+                /><p class="fw-bold text-danger" *ngIf="pizzaForm.get('adition')?.hasError('required')&& pizzaForm.get('adition')?.touched">The pizza adition is needed</p>
             </strong>
             <strong>
                 <label for="lname">PRICE</label>

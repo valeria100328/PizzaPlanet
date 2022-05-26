@@ -59,10 +59,10 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/']);
 
         Swal.fire({
-            title: '¡Acceso permitido, Bienvenido a StarPass!!',
-            text: 'El boleto que te llevará a conocer tus estrellas favoritas',
+            title: '¡Acceso permitido, Bienvenido a PIZZA PLANET!!',
+            text: '',
             imageUrl:
-                'https://4.bp.blogspot.com/-69TAWn3y5c0/Vcv6AqZr6jI/AAAAAAAAQdU/57ggaR2KTnE/s640/annyz.gif',
+                'http://enteratecali.net/wp-content/uploads/2014/03/Pizza-planet.png',
             icon: 'success',
             imageWidth: 400,
             imageHeight: 200,

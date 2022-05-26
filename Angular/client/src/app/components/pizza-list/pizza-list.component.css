@@ -7,15 +7,31 @@
 table {
     width: 80%;
     background-color: #FF5F00;
-    color: #EEEEEE;
+    color: #00092C;
     margin-left: 5%;
 }
 
 .navbar {
     background-color: #FF5F00;
-    color: #EEEEEE;
+    color: black;
     padding: 25px;
     display: block;
     width: 80%;
     margin-left: 5%;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+.pen:hover {
+    color: green;
+}
+
+.trash:hover {
+    color: rgb(247, 222, 222);
+}
+
+.fa-pizza {
+    margin-left: 5px;
 }
