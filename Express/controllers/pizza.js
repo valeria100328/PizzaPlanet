@@ -38,12 +38,24 @@ const findPizzaById = async (req, res) => {
 const updatePizza = async (req, res) => {
     try {
         const {name, size, adition, price} = req.body
+<<<<<<< HEAD:Express/controllers/pizza.js
         let data_pizza = await pizza.findById(req.params.id)
             data_pizza.name = name;
             data_pizza.size = size;
             data_pizza.adition = adition;
             data_pizza.price = price;
         data_pizza = await pizza.findOneAndUpdate({_id: req.params.id}, data_pizza, {new: true});
+=======
+        let data_pizza = await Pizzas.findById(req.params.id)
+        if (!data_pizza ) {
+            res.status(404).json({ message: 'No se encontró coincidencias para la actualización de pizza planets que quiere modificar' })
+        }
+            data_pizza.name = name;
+            data_pizza.size = size
+            data_pizza.adition = adition
+            data_pizza.price = price
+            data_pizza = await Pizzas.findOneAndUpdate({_id: req.params.id}, data_pizza, {new: true});
+>>>>>>> c56f1dcf7deef4468e20a878e3da28acc1e72bf1:Express/controllers/pizzaController.js
         res.json(data_pizza);
     } catch (error) {
         console.log(error);

@@ -1,5 +1,5 @@
 export class Pizza {
-    _id: any;
+    _id?: any;
     name: string;
     size: string;
     adition: string;

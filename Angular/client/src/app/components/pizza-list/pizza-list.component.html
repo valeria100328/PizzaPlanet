@@ -1,11 +1,12 @@
+
+
 <div class="navbar">
     <h1>MY ORDERS</h1>
 </div>
 
-<br/>
-<button routerLink="/register" class="btn btn-primary">REGISTER</button> <br />
-<br/>
-<table class="table " *ngIf="listaPizzas.length > 0">
+<button  routerLink="/register" class="btn btn-primary">REGISTER</button> <br />
+
+<table class="table" *ngIf="listaPizzas.length > 0">
     <thead>
         <tr>
             <th scope="col"></th>
@@ -17,21 +18,51 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let pizza_data of listaPizzas">
-            <th scope="row"> <i
-                routerLink=""
-                class="fa-solid fa-pizza-slice fa-2x fa-flip"
-                style="--fa-animation-duration: 2s"
-            ></i></th>
-            <td>{{pizza_data.name}}</td>
-            <td>{{pizza_data.size}}</td>
-            <td>{{pizza_data.adition}}</td>
-            <td>{{pizza_data.price}}</td>
-            <td>
-                <i class="pen fa-solid fa-pen-to-square fa-2x icon-update px-2" [routerLink]="['/register', pizza_data._id]"></i>
+        <tr *ngFor="let data_pizza of listaPizzas">
+            <th scope="row">
+                <i
+                    routerLink=""
+                    class="fa-solid fa-pizza-slice fa-2x fa-flip"
+                    style="--fa-animation-duration: 2s"
+                ></i>
+            </th>
+            <th>{{ data_pizza.name }}</th>
+            <th>{{ data_pizza.size }}</th>
+            <th>{{ data_pizza.adition }}</th>
+            <th>{{ data_pizza.price }}</th>
+            <th>
+                <i
+                    class="pen fa-solid fa-pen-to-square fa-2x icon-update px-2"
+                    [routerLink]="['/register', data_pizza._id]"
+                ></i>
 
-                <i class="trash fa-solid fa-trash-can fa-2x icon-delete px-2" (click)="eliminarPizza(pizza_data._id)"></i> </td>
+                <i
+                    class="trash fa-solid fa-trash-can fa-2x icon-delete px-2"
+                    (click)="eliminarPizza(data_pizza._id)"
+                ></i>
+            </th>
         </tr>
     </tbody>
-
 </table>
+
+<tbody id="message">
+    <h2 *ngIf="listaPizzas.length == 0">
+        There are no pizza planet orders at the moment
+    </h2>
+</tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,6 +11,7 @@ const pizzaSchema = mongoose.Schema({
     },
     adition: {
         type: 'string',
+        require: true
     },
     price: {
         type: Number,
@@ -21,5 +22,9 @@ const pizzaSchema = mongoose.Schema({
     }
 })
 
+<<<<<<< HEAD:Express/models/pizza.js
 const pizza = mongoose.model("pizza", pizzaSchema);
 export default pizza;
+=======
+module.exports = mongoose.model('user', pizzasSchema)
+>>>>>>> c56f1dcf7deef4468e20a878e3da28acc1e72bf1:Express/models/Pizzas.js

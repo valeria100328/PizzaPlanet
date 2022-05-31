@@ -1,18 +1,29 @@
+body{
+    background-image: url(../../../assets/img/background2.jpg);
+
+}
+
 .btn {
     color: #fff;
     background-color: #911f27;
     margin-left: 5%;
 }
+button {
+    margin-top: 3%;
+    box-shadow: 2px 2px 20px #00092c;
+}
 
 table {
     width: 80%;
-    background-color: #FF5F00;
-    color: #00092C;
+    background-color: #ff5f00;
+    box-shadow: 2px 2px 20px #00092c;
+    color: #00092c;
     margin-left: 5%;
+    margin-top: 2%;
 }
 
 .navbar {
-    background-color: #FF5F00;
+    background-color: #ff5f00;
     color: black;
     padding: 25px;
     display: block;
@@ -35,3 +46,22 @@ table {
 .fa-pizza {
     margin-left: 5px;
 }
+#message h2 {
+    margin-left: 60px;
+    font-weight: bold;
+    color: #911f27;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
