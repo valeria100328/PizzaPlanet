@@ -27,7 +27,7 @@ export class PizzaService {
         return this.http.get(`${this.url_api}/${id}`)
     }
 
-    putPizza(id: string, pizza: Pizza ): Observable<any> {
+    putPizza(id: String, pizza: Pizza ): Observable<any> {
         return this.http.put(`${this.url_api}/${id}`, pizza)
     }
 

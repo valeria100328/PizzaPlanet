@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+/*import jwt from "jsonwebtoken";
 import moment from "moment";
 
 const generateJwt = (data) => {
@@ -22,4 +22,4 @@ const verifyToken = (token) => {
     const verify = jwt.verify(token, process.env.JWT);
 };
 
-export default { generateJwt, verifyToken };
+export default { generateJwt, verifyToken };*/

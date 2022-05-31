@@ -14,6 +14,9 @@ import { PizzaListComponent } from './components/pizza-list/pizza-list.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { EditformComponent } from './components/editform/editform.component';
+import { ListsrolesComponent } from './admin/listsroles/listsroles.component';
+import { ListsUsersComponent } from './admin/lists-users/lists-users.component';
 
 @NgModule({
     declarations: [
@@ -25,6 +28,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
         NavbarComponent,
         PizzaRegisterComponent,
         PizzaListComponent,
+        EditformComponent,
+        ListsrolesComponent,
+        ListsUsersComponent,
     ],
 
     imports: [

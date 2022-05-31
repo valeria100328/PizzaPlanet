@@ -11,6 +11,7 @@ const pizzasSchema = mongoose.Schema({
     },
     adition: {
         type: 'string',
+        require: true
     },
     price: {
         type: Number,
@@ -21,4 +22,4 @@ const pizzasSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('pizzas', pizzasSchema)
+module.exports = mongoose.model('user', pizzasSchema)

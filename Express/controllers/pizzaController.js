@@ -40,11 +40,14 @@ exports.updatePizza = async (req, res) => {
     try {
         const {name, size, adition, price} = req.body
         let data_pizza = await Pizzas.findById(req.params.id)
+        if (!data_pizza ) {
+            res.status(404).json({ message: 'No se encontró coincidencias para la actualización de pizza planets que quiere modificar' })
+        }
             data_pizza.name = name;
-            data_pizza.size = size;
-            data_pizza.adition = adition;
-            data_pizza.price = price;
-        data_pizza = await Pizzas.findOneAndUpdate({_id: req.params.id}, data_pizza, {new: true});
+            data_pizza.size = size
+            data_pizza.adition = adition
+            data_pizza.price = price
+            data_pizza = await Pizzas.findOneAndUpdate({_id: req.params.id}, data_pizza, {new: true});
         res.json(data_pizza);
     } catch (error) {
         console.log(error);

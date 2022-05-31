@@ -20,59 +20,54 @@ export class PizzaRegisterComponent implements OnInit {
 
     constructor(private fb: FormBuilder, private pizzaservice: PizzaService, private router: Router, private idPizzaPath: ActivatedRoute) {
         this.pizzaForm = this.fb.group({
-            _id: ['',  Validators.required],
             name: ['', Validators.required],
             size: ['', [Validators.required,]],
             adition: ['', Validators.required],
-            price: ['15', [Validators.required, Validators.pattern(this.numbers)]],
+            price: ['', [Validators.required, Validators.pattern(this.numbers)]],
         })
-        this.id = this.idPizzaPath.snapshot.paramMap.get('_id');
-        console.log(`%c Parametro de la url: ${this.id}`, 'color: red; font-size: 1rem;');
+        this.id = this.idPizzaPath.snapshot.paramMap.get('id');
     }
 
     ngOnInit(): void {
-        this.actions();
+        this.actions()
     }
 
+    //verifica si el formulario registra
     addPizza(){
         console.log(this.pizzaForm)
-        const data_pizza_form:
-        Pizza = {
-            _id: this.pizzaForm.get('id')?.value,
+
+    //consumo de nuestra api
+        const data_pizza_form: Pizza = {
             name: this.pizzaForm.get('name')?.value,
             size: this.pizzaForm.get('size')?.value,
             adition: this.pizzaForm.get('adition')?.value,
             price: this.pizzaForm.get('price')?.value,
         }
-        console.log(data_pizza_form)
+        //Actuliza
         if(this.id !== null){
             this.pizzaservice.putPizza(this.id, data_pizza_form).subscribe(data => {
-                this.router.navigate(['/register']);
+                this.router.navigate(['/dashboard']);
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
                     title: 'Your Pizza has been update successfully',
-                    showConfirmButton: false,
-                    timerProgressBar: true,
-                    timer: 3000
                 })
+
             }, error => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Someting its happening',
                     text: 'Contact administrator'
                 })
-                console.log(error)
+                
             })
-        }else {this.pizzaservice.postPizza(data_pizza_form).subscribe(data => {
-            this.router.navigate(['/register/']);
+        }else{
+            this.pizzaservice.postPizza(data_pizza_form).subscribe(data => {
+            this.router.navigate(['/dashboard']);
             Swal.fire({
                 position: 'center',
                 icon: 'success',
                 title: 'Your Pizza has been created successfully!',
-                showConfirmButton: false,
-                timerProgressBar: true,
-                timer: 3000
             })
         }, error => {
             Swal.fire({
@@ -90,7 +85,6 @@ export class PizzaRegisterComponent implements OnInit {
             //actualizar
             this.titleForm = 'Update Pizza';
             this.pizzaservice.getPizza(this.id).subscribe(data => {
-                console.log(data);
                 this.pizzaForm.setValue({
                     name: data.name,
                     size: data.size,
@@ -98,7 +92,6 @@ export class PizzaRegisterComponent implements OnInit {
                     price: data.price
                 })
             }, error => {
-                console.log(error);
             })
         }
     }

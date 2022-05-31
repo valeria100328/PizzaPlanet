@@ -1,12 +1,14 @@
-const express = require('express');
+import express from "express";
 const router = express.Router();
-const pizzaController = require('../controllers/pizzaController');
+import pizzaController from "../controllers/pizzaController";
+//const pizzaController = require('../controllers/pizzaController');
+import auth from "../middlewares/auth.js";
 
 
-router.post('/', pizzaController.createPizza)
-router.get('/', pizzaController.findPizza)
-router.get('/:id', pizzaController.findPizzaById)
-router.put('/:id', pizzaController.updatePizza)
-router.delete('/:id', pizzaController.deletePizza)
+router.post('/', auth, pizzaController.createPizza)
+router.get('/', auth, pizzaController.findPizza)
+router.get('/:id', auth, pizzaController.findPizzaById)
+router.put('/:id', auth, pizzaController.updatePizza)
+router.delete('/:id', auth, pizzaController.deletePizza)
 
 module.exports = router;
