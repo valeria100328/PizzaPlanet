@@ -25,12 +25,8 @@ export class PizzaRegisterComponent implements OnInit {
             adition: ['', Validators.required],
             price: ['', [Validators.required, Validators.pattern(this.numbers)]],
         })
-<<<<<<< HEAD
-        this.id = this.idPizzaPath.snapshot.paramMap.get('_id');
-        // console.log(`%c Parametro de la url: ${this.id}`, 'color: red; font-size: 1rem;');
-=======
+
         this.id = this.idPizzaPath.snapshot.paramMap.get('id');
->>>>>>> c56f1dcf7deef4468e20a878e3da28acc1e72bf1
     }
 
     ngOnInit(): void {
@@ -39,16 +35,10 @@ export class PizzaRegisterComponent implements OnInit {
 
     //verifica si el formulario registra
     addPizza(){
-<<<<<<< HEAD
-        const data_pizza_form:
-        Pizza = {
-            _id: this.pizzaForm.get('id')?.value,
-=======
         console.log(this.pizzaForm)
 
     //consumo de nuestra api
-        const data_pizza_form: Pizza = {
->>>>>>> c56f1dcf7deef4468e20a878e3da28acc1e72bf1
+            const data_pizza_form: Pizza = {
             name: this.pizzaForm.get('name')?.value,
             size: this.pizzaForm.get('size')?.value,
             adition: this.pizzaForm.get('adition')?.value,
@@ -70,16 +60,10 @@ export class PizzaRegisterComponent implements OnInit {
                     title: 'Someting its happening',
                     text: 'Contact administrator'
                 })
-                
+
             })
-<<<<<<< HEAD
         }else {this.pizzaservice.postPizza(data_pizza_form).subscribe(data => {
             this.router.navigate(['/register']);
-=======
-        }else{
-            this.pizzaservice.postPizza(data_pizza_form).subscribe(data => {
-            this.router.navigate(['/dashboard']);
->>>>>>> c56f1dcf7deef4468e20a878e3da28acc1e72bf1
             Swal.fire({
                 position: 'center',
                 icon: 'success',

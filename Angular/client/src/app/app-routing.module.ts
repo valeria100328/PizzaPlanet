@@ -8,6 +8,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PizzaListComponent } from './components/pizza-list/pizza-list.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { EditformComponent } from './components/editform/editform.component';
+import { ListUserComponent } from './admin/lists-users/lists-users.component';
+import { ListRoleComponent } from './admin/listsroles/listsroles.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -18,9 +20,10 @@ const routes: Routes = [
     { path: 'pizzalist', component: PizzaListComponent },
     { path: 'register', component: PizzaRegisterComponent },
     { path: 'register/:id', component: PizzaRegisterComponent },
-   // { path: 'register/:id', component: EditformComponent },
-
-  
+    { path: 'listUser', component: ListUserComponent,},
+    { path: 'register/:id', component: EditformComponent },
+    { path: 'listUser', component: ListUserComponent},
+    { path: 'listRole', component: ListRoleComponent},
     { path: '**', redirectTo: 'register', pathMatch: 'full' },
 ];
 

@@ -1,4 +1,4 @@
-/*import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import moment from "moment";
 
 const generateJwt = (data) => {
@@ -27,4 +27,4 @@ const verifyToken = (token) => {
     }
 };
 
-export default { generateJwt, verifyToken };*/
+export default { generateJwt, verifyToken };

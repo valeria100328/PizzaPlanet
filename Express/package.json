@@ -2,7 +2,6 @@
     "name": "pizzaplanet",
     "version": "1.0.0",
     "description": "register pizzas crud",
-    "type": "module",
     "main": "index.js",
     "type": "module",
     "scripts": {

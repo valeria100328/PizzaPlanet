@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AutenticacionService } from 'src/app/services/autenticacion.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
-import { User } from 'src/app/models/user';
+import {
+    MatSnackBar,
+    MatSnackBarHorizontalPosition,
+    MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-login',
@@ -11,63 +13,62 @@ import { User } from 'src/app/models/user';
     styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-    loginUser: any;
-    loginForm: FormGroup;
-    validacionEmail =
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    loginData: any;
+    message: string = '';
+    horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+    verticalPosition: MatSnackBarVerticalPosition = 'top';
+    durationInSeconds: number = 2;
 
     constructor(
-        private fb: FormBuilder,
-        private router: Router,
-        private autenticacion: AutenticacionService
+        private _userService: UserService,
+        private _router: Router,
+        private _snackBar: MatSnackBar
     ) {
-        this.loginUser = {};
-        this.loginForm = this.fb.group({
-            usuario: [
-                '',
-                [Validators.required, Validators.pattern(this.validacionEmail)],
-            ],
-            password: ['', Validators.required],
-        });
+        this.loginData = {};
     }
 
-    ngOnInit(): void {
-        console.log('esta instruccion se ejecuta al cargar el componente');
-    }
-    //Proceso de subscripcion
+    ngOnInit(): void {}
+
     login() {
-        this.autenticacion.loginUser(this.loginUser).subscribe(
-            (res) => {
-                console.log(res);
-                //Si tod esta correcto se nos va a guardar el localstorage
-                localStorage.setItem('token', res.jwtToken);
-            },
-            (err) => console.log(err)
-        );
+        if (!this.loginData.email || !this.loginData.password) {
+            this.message = 'Failed process: Imcomplete data';
+            this.openSnackBarError();
+        } else {
+            this._userService.login(this.loginData).subscribe({
+                next: (v) => {
+                    localStorage.setItem('token', v.token);
+                    this._router.navigate(['/']);
+                    this.getRole(this.loginData.email);
+                    this.loginData = {};
+                },
+                error: (e) => {
+                    this.message = e.error.message;
+                    this.openSnackBarError();
+                },
+                complete: () => console.info('complete'),
+            });
+        }
     }
 
-    accesoUsuario() {
-        console.log(this.loginForm);
-        console.log(this.loginForm.get('usuario')?.value);
-
-        const data_usuario: User = {
-            email: this.loginForm.get('usuario')?.value,
-            password: this.loginForm.get('password')?.value,
-            name: '',
-        };
-
-        this.router.navigate(['/']);
-
-        Swal.fire({
-            title: '¡Acceso permitido, Bienvenido a PIZZA PLANET!!',
-            text: '',
-            imageUrl:
-                'http://enteratecali.net/wp-content/uploads/2014/03/Pizza-planet.png',
-            icon: 'success',
-            imageWidth: 400,
-            imageHeight: 200,
-            imageAlt: 'Custom image',
+    getRole(email: string) {
+        this._userService.getRole(email).subscribe({
+            next: (v) => {
+                localStorage.setItem('role', v.userRole);
+            },
+            error: (e) => {
+                this.message = e.error.message;
+                this.openSnackBarError();
+            },
+            complete: () => console.info('complete'),
         });
-        console.log(data_usuario);
+    }
+
+    openSnackBarError() {
+        this._snackBar.open(this.message, 'X', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+            duration: this.durationInSeconds * 1000,
+            panelClass: ['style-snackBarFalse'],
+        });
     }
 }

@@ -9,7 +9,7 @@ router.post("/login", user.login); // Inicia sesion y devuelve token auth
 
 //se necesita estar autenticado
 router.post("/registerAdminUser", auth, admin, user.registerAdminUser); //check
-router.get("/listUsers/:name?", auth, admin, user.listAllUser); //check
+router.get("/listUsers/:name?", user.listAllUser); //check
 router.get("/getRole/:email", auth, user.getUserRole); // check admin
 router.get("/findUser/:_id", auth, admin, user.findUser); //check
 router.put("/updateUser", auth, admin, user.updateUser);
