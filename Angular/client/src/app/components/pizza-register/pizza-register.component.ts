@@ -27,7 +27,7 @@ export class PizzaRegisterComponent implements OnInit {
             price: ['15', [Validators.required, Validators.pattern(this.numbers)]],
         })
         this.id = this.idPizzaPath.snapshot.paramMap.get('_id');
-        console.log(`%c Parametro de la url: ${this.id}`, 'color: red; font-size: 1rem;');
+        // console.log(`%c Parametro de la url: ${this.id}`, 'color: red; font-size: 1rem;');
     }
 
     ngOnInit(): void {
@@ -35,7 +35,6 @@ export class PizzaRegisterComponent implements OnInit {
     }
 
     addPizza(){
-        console.log(this.pizzaForm)
         const data_pizza_form:
         Pizza = {
             _id: this.pizzaForm.get('id')?.value,
@@ -65,7 +64,7 @@ export class PizzaRegisterComponent implements OnInit {
                 console.log(error)
             })
         }else {this.pizzaservice.postPizza(data_pizza_form).subscribe(data => {
-            this.router.navigate(['/register/']);
+            this.router.navigate(['/register']);
             Swal.fire({
                 position: 'center',
                 icon: 'success',

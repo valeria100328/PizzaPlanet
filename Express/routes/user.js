@@ -1,19 +1,19 @@
-const express = require ('express')
-const router = express.Router()
-const {User} = require('../models/user')
-router.post("/login", User.login);
+import express from "express";
+import user from "../controllers/user.js";
+import auth from "../middlewares/auth.js";
+import admin from "../middlewares/admin.js";
+const router = express.Router();
 
+router.post("/register", user.registerUser); // Registra exitosamente con rol admin o client
+router.post("/login", user.login); // Inicia sesion y devuelve token auth
 
-router.post('/', async(req, res) => {
-    let user = await User.findOne({email: req.body.email})
-    if(user) return res.status(400).send('Ese usuario ya existe')
-    user = new User({
-        name: req.body.name,
-        email:req.body.email,
-        password: req.body.password
-    })
-    const result = await user.save()
-    const jwtToken = user.generateJWT()
-    res.status(200).send({jwtToken})
-})
-module.exports = router
+//se necesita estar autenticado
+router.post("/registerAdminUser", auth, admin, user.registerAdminUser); //check
+router.get("/listUsers/:name?", auth, admin, user.listAllUser); //check
+router.get("/getRole/:email", auth, user.getUserRole); // check admin
+router.get("/findUser/:_id", auth, admin, user.findUser); //check
+router.put("/updateUser", auth, admin, user.updateUser);
+router.put("/deleteUser", auth, admin, user.deleteUser);
+
+export default router;
+

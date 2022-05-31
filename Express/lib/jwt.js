@@ -19,7 +19,12 @@ const generateJwt = (data) => {
 };
 
 const verifyToken = (token) => {
-    const verify = jwt.verify(token, process.env.JWT);
+    let verify = "";
+    try {
+        return (verify = jwt.verify(token, process.env.JWT));
+    } catch (e) {
+        return verify;
+    }
 };
 
 export default { generateJwt, verifyToken };

@@ -9,7 +9,7 @@ import { Pizza } from '../models/pizza';
 })
 export class PizzaService {
 
-    url_api ='http://127.0.0.1:3000/api/pizzas';
+    url_api ='http://127.0.0.1:3000/api/pizza';
 
     constructor(private  http: HttpClient) { }
 
